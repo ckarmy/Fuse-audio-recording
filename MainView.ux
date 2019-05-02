@@ -1,0 +1,33 @@
+<App>
+	<JavaScript>
+		var AudioRecorder = require("AudioRecorder");
+
+		module.exports = {
+			recordAudio: function () {
+				AudioRecorder.recordAudio();
+			},
+			stopRecording: function() {
+				AudioRecorder.stopAudio();
+			},
+			startPlayback: function() {
+				AudioRecorder.playAudio();
+			}
+		};
+	</JavaScript>
+	<ClientPanel>
+		<Panel>
+			<StackPanel Alignment="VerticalCenter">
+				<AudioButton AudioButtonText="Record Audio" Clicked="{recordAudio}" />
+				<AudioButton AudioButtonText="Stop Recording" Clicked="{stopRecording}" />
+				<AudioButton AudioButtonText="Playback Record" Clicked="{startPlayback}" />
+			</StackPanel>
+		</Panel>
+
+		<Panel Width="200" ux:Class="AudioButton" Margin="10,5">
+			<string ux:Property="AudioButtonText" />
+
+			<Text TextColor="#fff" Value="{Property AudioButtonText}" FontSize="14" TextAlignment="Center" Margin="5,10" />
+			<Rectangle Layer="Background" CornerRadius="35" Color="#000" />
+		</Panel>
+	</ClientPanel>
+</App>

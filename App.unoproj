@@ -1,0 +1,12 @@
+{
+  "RootNamespace":"",
+  "Packages": [
+    "Fuse",
+    "FuseJS",
+    "Uno.Permissions"
+  ],
+  "Includes": [
+    "*",
+    "**.js:FuseJS"
+  ]
+}
